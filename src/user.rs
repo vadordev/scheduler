@@ -13,10 +13,10 @@ struct UserRoot {
     users: Vec<User>,
 }
 
-pub fn read_input_users( file_contents: &str ) -> Option<Vec<User>> {
-    let output_users = from_str::<UserRoot>( &file_contents );
+pub fn read_input_users(file_contents: &str) -> Option<Vec<User>> {
+    let output_users = from_str::<UserRoot>(&file_contents);
     return match output_users {
         Ok(t) => Some(t.users),
         Err(_e) => None,
-    }
+    };
 }
