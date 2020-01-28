@@ -1,0 +1,4 @@
+users = [
+    { name = "jan.kowalski" },
+    { name = "bobo.spock" }
+]
