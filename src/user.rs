@@ -9,15 +9,13 @@ pub struct User {
 }
 
 #[derive(Deserialize)]
-struct UserRoot {
+struct UsersToml {
     users: Vec<User>,
 }
 
 pub fn parse_users(file_contents: &str) -> Option<Vec<User>> {
-    let output_users = from_str::<UserRoot>(&file_contents);
-
-    match output_users {
-        Ok(t) => Some(t.users),
-        Err(_e) => None,
+    match from_str::<UsersToml>(&file_contents) {
+        Ok(output_users) => Some(output_users.users),
+        Err(_) => None,
     }
 }
