@@ -13,7 +13,7 @@ struct UserRoot {
     users: Vec<User>,
 }
 
-pub fn read_input_users(file_contents: &str) -> Option<Vec<User>> {
+pub fn parse_users(file_contents: &str) -> Option<Vec<User>> {
     let output_users = from_str::<UserRoot>(&file_contents);
 
     match output_users {
